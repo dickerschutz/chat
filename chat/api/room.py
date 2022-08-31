@@ -21,6 +21,9 @@ def get(email):
 
     ).run(as_dict=True)
 
+    # Filter out invalid like
+    all_rooms = [room for room in all_rooms if email in room['members'].split(', ')]
+
     for room in all_rooms:
         if room['type'] == 'Direct':
             members = room['members'].split(', ')

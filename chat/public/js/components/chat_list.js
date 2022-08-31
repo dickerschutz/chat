@@ -227,7 +227,7 @@ export default class ChatList {
         frappe.utils.play_sound('chat-notification');
       }
 
-      if (res.members.includes(me.user_email)) {
+      if (res.members.split(",").filter((elt) => elt.includes(me.user_email)).length > 0) {
         if (res.room_type === 'Direct') {
           res.room_name =
             res.member_names[0]['email'] == me.user_email
