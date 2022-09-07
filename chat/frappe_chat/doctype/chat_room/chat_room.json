@@ -16,7 +16,7 @@
  "fields": [
   {
    "fieldname": "last_message",
-   "fieldtype": "Data",
+   "fieldtype": "Text",
    "hidden": 1,
    "label": "Last Message"
   },
